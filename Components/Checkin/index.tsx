@@ -8,12 +8,13 @@ import { ListaJogadores } from '../ListaJogadores';
 export function Checkin() {
   return (
     <Provider> 
-    <View style={{ flex: 1}}>
+    <View style={{ flex: 1, }}>
       <Header />
-
-      <InputJogadores />
       
-      <View style={{flex:7, width:'100%', height:'80%' }}>
+      <InputJogadores />
+     
+      
+      <View style={{flex:3 }}>
         <ListaJogadores />
         
       </View>

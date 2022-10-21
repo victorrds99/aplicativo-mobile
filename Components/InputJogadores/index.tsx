@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {useState} from 'react';
 import { View,TouchableOpacityProps } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import { ButtonCreateJogador } from '../ButtonCreateJogador';
@@ -14,8 +15,8 @@ export interface InputJogadores{
 
 
 export function InputJogadores(){
-    const [text, setText] = React.useState<string>();
-    const [value, setValue] = React.useState<string>();
+    const [text, setText] = useState<string>();
+    const [value, setValue] = useState<string>();
     return(
            <View style={styles.container}>
                  <TextInput
@@ -27,7 +28,7 @@ export function InputJogadores(){
                     onChangeText={setText}
                     value={text}
         />          
-                <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
+                <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value+''}>
                     <View style={{ flexDirection:'row', }}>
                         <Text>Goleiro</Text>
                         <RadioButton value="Goleiro" />
@@ -36,10 +37,11 @@ export function InputJogadores(){
                         <RadioButton value="Linha" />
                     </View>
                 </RadioButton.Group>
-            
+                
                 <ButtonCreateJogador nome={text} posicao={value}/>
 
-                
+                <View style={{ flex:1,flexDirection:'row', }}>
+                </View>
            </View>
 
            

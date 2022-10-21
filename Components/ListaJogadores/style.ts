@@ -19,5 +19,10 @@ export const styles = StyleSheet.create({
           fontSize: 18,
           height: 44,
         },
+        contentList:{
+          paddingLeft:32,
+          paddingRight:64,
+          
+        }
       
   });
