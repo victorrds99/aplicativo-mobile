@@ -1,8 +1,8 @@
 import * as React  from 'react';
 import { useState } from 'react';
 
-import { View } from 'react-native';
-import { Button } from 'react-native-paper';
+import { View, Button } from 'react-native';
+import { Portal, Modal, Provider, Text } from 'react-native-paper';
 import {styles } from './style'
 import axios from 'axios'
 import { Jogador } from './../ListaJogadores/index';
@@ -20,14 +20,21 @@ export interface ButtonCreateJogador{
 
 export function ButtonCreateJogador(props:ButtonCreateJogador) {
     const [lista, setLista] = useState<Jogador[]>([]);
+    const [visible, setVisible] = React.useState(false);
     
+    const showModal = () => setVisible(true);
+    const hideModal = () => setVisible(false);
+    const containerStyle = {backgroundColor: 'white', padding: 20};
     return(
+
+    <Provider>    
         <View style={styles.container}>
+           
             <Button 
-                icon="camera" 
-                mode="contained" 
+                 
+                title='Adicionar'
                 onPress={ () => {
-                            console.log("Botao apertado");
+                            
                             api.post("/",{
                                 "nome_jogador":props.nome,
                                 "posicao":props.posicao
@@ -36,14 +43,16 @@ export function ButtonCreateJogador(props:ButtonCreateJogador) {
                             .then((info)=>{
                             
                             setLista(info.data);
+                            alert("Inserido com sucesso!")
+                            
                         })
                         .catch(error => {console.log(error)});
                         } 
                         }
-            >
-                Adicionar 
-            </Button>
+            />
+            
         </View>
+    </Provider>
     )
 }
  

@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import {  Text, View, Image } from 'react-native';
 
-import { MenuApp } from './../MenuApp/index';
+import { MenuApp } from '../MenuApp/index';
 
 
 export function Header() {
@@ -12,7 +12,9 @@ export function Header() {
           justifyContent: 'space-around',
           alignItems:'stretch',
           flexDirection:'row', 
-          marginTop:30}}>
+          marginTop:30,
+          marginBottom: '20%'}}
+          >
       
         
           
@@ -40,7 +42,7 @@ export function Header() {
           
   
         
-        <StatusBar style="auto" />
+     
   
         
       </View>

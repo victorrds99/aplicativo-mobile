@@ -18,11 +18,23 @@ export const styles = StyleSheet.create({
           padding: 10,
           fontSize: 18,
           height: 44,
+          alignItems: "center",
+          backgroundColor: "#DDDDDD"
+   
         },
         contentList:{
           paddingLeft:32,
           paddingRight:64,
           
-        }
+        },
+        title: {
+          textAlign: 'center',
+          marginVertical: 8,
+        },
+        fixToText: {
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        },
+
       
   });
